@@ -91,3 +91,13 @@ http://localhost/Final%20Web-based%20Programming%20Exam/login.php
 - The system expects the database name to be `event_mgmt_db`.
 - Uploaded event images are stored in the `uploads` folder.
 - If image uploads fail, confirm the `uploads` folder exists and is writable by WAMP.
+
+
+## GROUP 6 MEMBERS
+-MUNGU-DIT ISAAC
+-KALYANGO MARIA JACKIE
+-KAKOOZA JOEL MICHAEL
+-SSEKABIRA DEUS
+-KIRABO CABRINE ELIZABETH
+-OGWANG FRANCIS
+  
