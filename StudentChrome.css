@@ -1,0 +1,186 @@
+/* Shared student navbar and footer */
+#navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
+.custom-navbar {
+    min-height: 72px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.94);
+    border-bottom: 1px solid rgba(13, 32, 68, 0.1);
+    box-shadow: 0 10px 28px rgba(13, 32, 68, 0.08);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+}
+
+.student-nav-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 18px;
+}
+
+.custom-navbar .navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #0d2044;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0;
+}
+
+.custom-navbar .navbar-brand img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+.custom-navbar .navbar-toggler {
+    border: 1px solid rgba(13, 32, 68, 0.16);
+    border-radius: 8px;
+    padding: 8px 10px;
+}
+
+.custom-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(79, 142, 247, 0.18);
+}
+
+.custom-navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2813, 32, 68, 0.88%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.custom-navbar .navbar-collapse {
+    justify-content: flex-end;
+}
+
+.custom-navbar .navbar-nav {
+    align-items: center;
+    gap: 6px;
+}
+
+.custom-navbar .nav-link {
+    color: #33415f;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 12px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link:focus {
+    background: #edf4ff;
+    color: #2d6fd4;
+}
+
+.custom-navbar .nav-link.active {
+    background: #0d2044;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(13, 32, 68, 0.18);
+}
+
+.custom-navbar .nav-link.nav-logout {
+    background: #f6e8ec;
+    color: #b42345;
+    margin-left: 8px;
+}
+
+.custom-navbar .nav-link.nav-logout:hover,
+.custom-navbar .nav-link.nav-logout:focus {
+    background: #b42345;
+    color: #fff;
+}
+
+.site-footer {
+    margin-top: 56px;
+    background: #0d2044;
+    color: #dce7f7;
+}
+
+.site-footer-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 34px 18px;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.site-footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.site-footer-brand img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+.site-footer-title {
+    margin: 0;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.site-footer-copy {
+    margin: 3px 0 0;
+    color: #aebed5;
+    font-size: 13px;
+}
+
+.site-footer-links {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.site-footer-links a {
+    color: #dce7f7;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.site-footer-links a:hover {
+    color: #7fb2ff;
+}
+
+@media (max-width: 991px) {
+    .custom-navbar .navbar-collapse {
+        padding: 14px 0 4px;
+    }
+
+    .custom-navbar .navbar-nav {
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .custom-navbar .nav-link {
+        padding: 13px 14px;
+    }
+
+    .custom-navbar .nav-link.nav-logout {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .site-footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .site-footer-links {
+        flex-direction: column;
+        gap: 8px;
+    }
+}

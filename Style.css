@@ -1,0 +1,725 @@
+body{
+    background-color: #F5F1ED;
+}
+/* ensure navbar links use the custom color */
+.custom-navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+.custom-navbar{
+    -webkit-backdrop-filter: blur(8px); 
+    backdrop-filter: blur(8px);
+    background-color: #0d2044cc;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    width: 100%;
+    z-index: 1000;
+}
+#heroSection {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+img[alt="Hero Image"] {
+    width: 100%;
+    height: 60vh;        /* full screen height */
+    object-fit: cover;    /* fills the space without stretching */
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.event-card {
+    margin-left: 20%;
+    max-width: 30%;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+#heroText{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+#eventsCaraousel{
+    max-width: 200px;
+    padding: 20px;
+
+}
+/*Styling the event caraousel */
+/* ── Section wrapper ───────────────────────── */
+.section {
+    padding: 60px 0;
+}
+
+/* ── Section header (title + view all link) ── */
+.sec-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+}
+
+.ey {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue-l, #4f8ef7);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+}
+
+.sec-titles h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 4px;
+}
+
+.sec-titles p {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+}
+
+.sec-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--blue-l, #4f8ef7);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.sec-link:hover {
+    text-decoration: underline;
+}
+
+/* ── Featured card ────────────────────────── */
+.feat-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+
+/* ── Image / colour area ─*/
+.feat-img {
+    width: 100%;
+    height: 260px;
+    background: linear-gradient(135deg, #0a1628 0%, #1a3a6b 50%, #0d2044 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stage {
+    font-size: 64px;
+    opacity: 0.6;
+}
+
+/* ── "Upcoming Event" badge ───────────────── */
+.feat-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.25);
+}
+
+/* ── Card body (text area) ────────────────── */
+.feat-body {
+    padding: 20px 20px 16px;
+}
+
+.feat-meta {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+/* ── Date and time chips ──────────────────── */
+.d-chip, .t-chip {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: #f0f4ff;
+    color: #4f8ef7;
+}
+
+.feat-body h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    line-height: 1.4;
+}
+
+.loc-row {
+    font-size: 13px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ── Prev / Next buttons ──────────────────── */
+.car-ctrl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    inset: 0;
+    padding: 0 18px;
+    pointer-events: none;
+}
+
+.ctrl {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.7);
+    background: rgba(13,32,68,0.64);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    line-height: 1;
+    font-weight: 300;
+    box-shadow: 0 10px 24px rgba(13,32,68,0.24);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    pointer-events: auto;
+    transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.ctrl span {
+    display: block;
+    transform: translateY(-2px);
+}
+
+.ctrl:hover,
+.ctrl:focus {
+    background: #4f8ef7;
+    color: #fff;
+    border-color: #4f8ef7;
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(79,142,247,0.3);
+    outline: none;
+}
+
+.ctrl:focus {
+    box-shadow: 0 0 0 4px rgba(79,142,247,0.2), 0 14px 30px rgba(79,142,247,0.3);
+}
+
+@media (max-width: 600px) {
+    .car-ctrl {
+        padding: 0 10px;
+    }
+
+    .ctrl {
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+    }
+}
+/* Styling the booking and history tables */
+/* ── Table wrapper ────────────────────────── */
+.tbl-wrap {
+    width: 100%;
+    overflow-x: auto; /* scroll on small screens */
+    border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    background: #fff;
+    margin-bottom: 32px;
+}
+
+/* ── Table base ───────────────────────────── */
+.ev-tbl {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+/* ── Header row ───────────────────────────── */
+.ev-tbl thead tr {
+    background: #f8f9fb;
+    border-bottom: 2px solid #eef0f4;
+}
+
+.ev-tbl thead th {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #999;
+    white-space: nowrap;
+}
+
+/* ── Body rows ────────────────────────────── */
+.ev-tbl tbody tr {
+    border-bottom: 1px solid #f0f2f5;
+    transition: background 0.15s;
+}
+
+.ev-tbl tbody tr:last-child {
+    border-bottom: none;
+}
+
+.ev-tbl tbody tr:hover {
+    background: #f8faff;
+}
+
+.ev-tbl tbody td {
+    padding: 16px 18px;
+    vertical-align: middle;
+    color: #333;
+}
+
+/* ── Thumbnail square (emoji or image) ───── */
+.ts {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background: linear-gradient(135deg, #0c1a38, #0f3060);
+    overflow: hidden;
+}
+
+/* ── Event name and subtitle in cell ─────── */
+.tcn {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 2px;
+}
+
+.tcs {
+    font-size: 12px;
+    color: #999;
+}
+
+/* ── Status / label pills ─────────────────── */
+.pill {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Green — Confirmed / Attended */
+.p-g {
+    background: #e6f9f0;
+    color: #1a9e5c;
+}
+
+/* Yellow — Pending */
+.p-y {
+    background: #fff8e1;
+    color: #b8860b;
+}
+
+/* Red — Cancelled */
+.p-r {
+    background: #fdecea;
+    color: #d32f2f;
+}
+
+/* Blue — Tickets */
+.p-b {
+    background: #e8f0fe;
+    color: #3b6fd4;
+}
+
+/* ── Action buttons ───────────────────────── */
+.btn-sm {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #e0e4ed;
+    color: #444;
+    background: #fff;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.btn-sm:hover {
+    background: #4f8ef7;
+    color: #fff;
+    border-color: #4f8ef7;
+}
+
+/* ── Book New Event button ────────────────── */
+.btn-p {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 22px;
+    background: #4f8ef7;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.btn-p:hover {
+    background: #2d6fd4;
+    color: #fff;
+}
+
+/* ── Section header ───────────────────────── */
+.sec-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.sec-titles h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 4px;
+    color: #1a1a2e;
+}
+
+.sec-titles p {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+}
+
+.ey {
+    font-size: 12px;
+    font-weight: 700;
+    color: #4f8ef7;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 4px;
+}
+
+/* ── Pagination ───────────────────────────── */
+.pag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.pb {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid #e0e4ed;
+    background: #fff;
+    color: #555;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.pb:hover {
+    background: #4f8ef7;
+    color: #fff;
+    border-color: #4f8ef7;
+}
+
+/* Active page button */
+.pb.on {
+    background: #4f8ef7;
+    color: #fff;
+    border-color: #4f8ef7;
+}
+/* Search and filter Section */
+
+.filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    padding: 16px 20px;
+    border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    max-width: 1140px;
+    margin: 0 auto 16px;
+    flex-wrap: wrap;
+}
+
+.filter-search {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-input {
+    width: 100%;
+    padding: 10px 14px 10px 38px;
+    border: 1.5px solid #e8eaf0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1a1a2e;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.filter-input:focus {
+    border-color: #4f8ef7;
+}
+
+.filter-select {
+    padding: 10px 14px;
+    border: 1.5px solid #e8eaf0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1a1a2e;
+    background: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: border 0.2s;
+    min-width: 150px;
+}
+
+.filter-select:focus {
+    border-color: #4f8ef7;
+}
+
+.filter-btn {
+    padding: 10px 22px;
+    background: #4f8ef7;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.filter-btn:hover {
+    background: #2d6fd4;
+}
+
+.filter-clear {
+    font-size: 13px;
+    color: #888;
+    text-decoration: none;
+    padding: 10px 8px;
+    white-space: nowrap;
+}
+
+.filter-clear:hover {
+    color: #e74c3c;
+}
+
+.validation-msg {
+    display: block;
+    max-width: 1140px;
+    margin: -6px auto 16px;
+    color: #e74c3c;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ── Results count and active filter tags ─── */
+.filter-results {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 1140px;
+    margin: 0 auto 20px;
+    flex-wrap: wrap;
+    font-size: 13.5px;
+    color: #888;
+}
+
+.filter-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #e8f0fe;
+    color: #3b6fd4;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.filter-tag a {
+    color: #3b6fd4;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.filter-tag a:hover {
+    color: #e74c3c;
+}
+
+/* ── Events grid ──────────────────────────── */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 16px 28px;
+}
+
+/* ── Event card ───────────────────────────── */
+.event-card {
+    margin: 0;
+    margin-bottom: 0;
+    max-width: none;
+    padding: 0;
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+}
+
+.ec-img {
+    position: relative;
+    height: 160px;
+    background: linear-gradient(135deg, #0c1a38, #0f3060);
+    overflow: hidden;
+}
+
+.ec-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ec-img-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.ec-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.25);
+}
+
+.ec-body {
+    padding: 16px 18px 20px;
+}
+
+.ec-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.ec-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0 0 8px;
+    line-height: 1.4;
+}
+
+.ec-venue {
+    font-size: 13px;
+    color: #888;
+    margin: 0 0 16px;
+}
+
+.ec-btn {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: #4f8ef7;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.ec-btn:hover {
+    background: #2d6fd4;
+    color: #fff;
+}
+
+/* ── No results state ─────────────────────── */
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: #888;
+}
+
+.no-results h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin: 12px 0 8px;
+}
+
+/* ── Responsive ───────────────────────────── */
+@media (max-width: 600px) {
+    .filter-bar      { flex-direction: column; align-items: stretch; }
+    .filter-select   { min-width: unset; }
+    .events-grid     { grid-template-columns: 1fr; }
+}
+

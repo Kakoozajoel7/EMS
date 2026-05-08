@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Event Management System Project Report</title>
+  <style>
+    @page { size: A4; margin: 12mm; }
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; color: #1f2937; margin: 0; font-size: 11px; line-height: 1.35; }
+    h1 { font-size: 24px; margin: 0 0 6px; color: #0d2044; }
+    h2 { font-size: 15px; margin: 14px 0 6px; color: #0d2044; border-bottom: 1px solid #d8e0ec; padding-bottom: 3px; }
+    h3 { font-size: 12px; margin: 8px 0 4px; }
+    p { margin: 0 0 7px; }
+    ul { margin: 4px 0 8px 18px; padding: 0; }
+    li { margin-bottom: 2px; }
+    .cover { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; margin-bottom: 8px; }
+    .meta { background: #eef4ff; border: 1px solid #cfe0ff; border-radius: 8px; padding: 8px 10px; min-width: 190px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .tables { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .table-card { border: 1px solid #d8e0ec; border-radius: 8px; padding: 7px; background: #fbfcff; }
+    .table-card strong { color: #0d2044; }
+    .shots { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+    figure { margin: 0; border: 1px solid #d8e0ec; border-radius: 8px; overflow: hidden; background: #fff; }
+    figure.wide { grid-column: 1 / -1; }
+    img { display: block; width: 100%; height: 118px; object-fit: cover; object-position: top; }
+    figure.wide img { height: 155px; }
+    figcaption { font-weight: 700; color: #0d2044; padding: 5px 7px; background: #f4f7fb; }
+    .page-break { break-before: page; }
+    .footer-note { color: #64748b; font-size: 10px; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="cover">
+    <div>
+      <h1>Event Management System</h1>
+      <p><strong>Project Report</strong></p>
+      <p>This system is a web-based event management portal built for university events. It separates responsibilities between students and administrators while using one shared login page. Students can register, browse events, RSVP, view booking history, and update their profiles. Administrators can manage event records, upload event images, view event statistics, and monitor RSVP records.</p>
+    </div>
+    <div class="meta">
+      <p><strong>Technology:</strong> PHP, MySQL, HTML, CSS, Bootstrap</p>
+      <p><strong>Server:</strong> WAMP / Apache</p>
+      <p><strong>Database:</strong> event_mgmt_db</p>
+      <p><strong>Roles:</strong> Student, Admin</p>
+    </div>
+  </div>
+
+  <h2>System Overview</h2>
+  <div class="grid">
+    <div>
+      <h3>Student Role</h3>
+      <ul>
+        <li>Create a student account and log in.</li>
+        <li>Browse and filter upcoming events.</li>
+        <li>RSVP for selected events.</li>
+        <li>View active bookings and event history.</li>
+        <li>Edit personal profile information.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Admin Role</h3>
+      <ul>
+        <li>Log in from the same login page.</li>
+        <li>Create, update, and delete events.</li>
+        <li>Upload event images.</li>
+        <li>View dashboard statistics.</li>
+        <li>Review and cancel RSVP records.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Database Structure</h2>
+  <div class="tables">
+    <div class="table-card"><strong>users</strong><br>Id, Name, Email, Password, Phone, RegNo, Gender, CreatedAt, Role</div>
+    <div class="table-card"><strong>admin</strong><br>Id, Name, Email, Password</div>
+    <div class="table-card"><strong>events</strong><br>Id, Name, Category, Description, EventDate, StartTime, EndTime, Venue, Organiser, RSVPDeadline, CreatedBy, CreatedAt, Image</div>
+    <div class="table-card"><strong>rsvp</strong><br>Id, UserId, EventId, RSVPDate</div>
+  </div>
+  <p class="footer-note">Relationships: events.CreatedBy references admin.Id; rsvp.UserId references users.Id; rsvp.EventId references events.Id. The RSVP table also prevents duplicate RSVP records for the same user and event.</p>
+
+  <h2>Screenshots of Key Screens</h2>
+  <div class="shots">
+    <figure>
+      <img src="report_screenshots/01-login.png" alt="Login screen">
+      <figcaption>Shared Login Page</figcaption>
+    </figure>
+    <figure>
+      <img src="report_screenshots/02-student-dashboard.png" alt="Student dashboard">
+      <figcaption>Student Dashboard</figcaption>
+    </figure>
+    <figure>
+      <img src="report_screenshots/03-student-bookings.png" alt="Student bookings">
+      <figcaption>Booking and History Page</figcaption>
+    </figure>
+    <figure>
+      <img src="report_screenshots/04-student-profile.png" alt="Student profile">
+      <figcaption>Student Profile Page</figcaption>
+    </figure>
+    <figure class="wide">
+      <img src="report_screenshots/05-admin-dashboard.png" alt="Admin dashboard">
+      <figcaption>Admin Dashboard</figcaption>
+    </figure>
+  </div>
+
+  <h2>Challenges and Lessons Learned</h2>
+  <p>One challenge was keeping the student and admin workflows connected while still separating their roles and visual designs. This was handled using role-based session variables, a shared login page, and separate authentication checks for students and administrators.</p>
+  <p>Another challenge was keeping file names, database column names, and page links consistent across the project. The solution was to align all admin pages with the actual project filenames and use the same database connection file throughout the system.</p>
+  <p>The project helped reinforce the importance of planning database relationships early, using prepared statements for database access, managing sessions carefully, and maintaining a clear folder structure for deployment.</p>
+</body>
+</html>

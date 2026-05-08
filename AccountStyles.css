@@ -1,0 +1,172 @@
+
+    /* ── Page background ──────────────────── */
+    .profile-page {
+        min-height: 100vh;
+        background: #f5f7fa;
+        padding: 40px 16px;
+    }
+
+    /* ── Top profile card (avatar + name) ─── */
+    .profile-hero {
+        background: linear-gradient(135deg, #1a3a6b 0%, #0c1a38 100%);
+        border-radius: 16px;
+        padding: 36px 32px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        margin-bottom: 24px;
+        color: #fff;
+    }
+
+    .profile-avatar {
+        width: 80px;
+        height: 80px;
+        min-width: 80px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        font-weight: 700;
+        color: #fff;
+        border: 3px solid rgba(255,255,255,0.3);
+    }
+
+    .profile-hero-name {
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0 0 4px;
+    }
+
+    .profile-hero-meta {
+        font-size: 13px;
+        opacity: 0.75;
+        margin: 0;
+    }
+
+    .profile-hero-badge {
+        margin-left: auto;
+        background: rgba(255,255,255,0.15);
+        border: 1px solid rgba(255,255,255,0.25);
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 5px 14px;
+        border-radius: 20px;
+        text-transform: capitalize;
+    }
+
+    /* ── Cards ────────────────────────────── */
+    .profile-card {
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+        padding: 28px 32px;
+        margin-bottom: 24px;
+    }
+
+    .profile-card-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1a1a2e;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #f0f2f5;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .profile-card-title span {
+        font-size: 18px;
+    }
+
+    /* ── Read-only info rows ──────────────── */
+    .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .info-item label {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: #aaa;
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    .info-item p {
+        font-size: 14px;
+        font-weight: 500;
+        color: #1a1a2e;
+        margin: 0;
+        padding: 10px 14px;
+        background: #f8f9fb;
+        border-radius: 8px;
+    }
+
+    /* ── Form fields ──────────────────────── */
+    .profile-form label {
+        font-size: 13px;
+        font-weight: 600;
+        color: #444;
+        margin-bottom: 6px;
+        display: block;
+    }
+
+    .profile-form .form-control {
+        border: 1.5px solid #e8eaf0;
+        border-radius: 8px;
+        padding: 10px 14px;
+        font-size: 14px;
+        color: #1a1a2e;
+        transition: border 0.2s;
+    }
+
+    .profile-form .form-control:focus {
+        border-color: #4f8ef7;
+        box-shadow: 0 0 0 3px rgba(79,142,247,0.12);
+        outline: none;
+    }
+
+    /* ── Save button ──────────────────────── */
+    .btn-save {
+        background: #4f8ef7;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 11px 28px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .btn-save:hover {
+        background: #2d6fd4;
+    }
+
+    /* ── Password section note ────────────── */
+    .pw-note {
+        font-size: 12px;
+        color: #aaa;
+        margin-bottom: 16px;
+    }
+
+    /* ── Alert overrides ──────────────────── */
+    .alert {
+        border-radius: 10px;
+        font-size: 13.5px;
+    }
+
+    /* ── Responsive ───────────────────────── */
+    @media (max-width: 600px) {
+        .profile-hero        { flex-direction: column; text-align: center; }
+        .profile-hero-badge  { margin-left: 0; }
+        .info-grid           { grid-template-columns: 1fr; }
+        .profile-card        { padding: 20px 16px; }
+    }
