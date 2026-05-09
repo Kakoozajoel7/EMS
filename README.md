@@ -70,7 +70,7 @@ http://localhost/Final%20Web-based%20Programming%20Exam/login.php
 ### Admin
 
 - Email: `admin@example.com`
-- Password: `admin123`
+- Password: `Admin@123`
 
 ### Student
 
